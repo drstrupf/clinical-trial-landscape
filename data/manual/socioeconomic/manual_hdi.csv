@@ -1,0 +1,14 @@
+country_name,country_ISO,hdi,source
+Falkland Is.,FLK,0.874,https://www.indexmundi.com/falkland_islands_(islas_malvinas)/
+Greenland,GRL,0.786,https://www.indexmundi.com/greenland/
+Kosovo,KOS,0.759,https://globaldatalab.org/shdi/shdi/XKO/?levels=1%2B4&interpolation=1&extrapolation=0&nearest_real=0&years=2019
+N. Cyprus,CYN,0.887,https://www.indexmundi.com/cyprus/
+New Caledonia,NCL,0.813,https://www.indexmundi.com/new_caledonia/
+North Korea,PRK,0.766,https://en.wikipedia.org/wiki/International_rankings_of_North_Korea
+Palestine,PSX,0.716,https://hdr.undp.org/data-center/human-development-index#/indicies/HDI
+Puerto Rico,PRI,0.845,https://www.indexmundi.com/puerto_rico/
+S. Sudan,SDS,0.385,https://hdr.undp.org/data-center/human-development-index#/indicies/HDI
+Somalia,SOM,0.361,https://www.indexmundi.com/somalia/
+Somaliland,SOL,,unavailable
+Taiwan,TWN,0.916,https://www.indexmundi.com/taiwan/
+W. Sahara,SAH,,unavailable
