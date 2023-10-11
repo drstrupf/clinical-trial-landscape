@@ -387,21 +387,47 @@ def linear_regression_and_scatter_plot(
         ax=ax,
     )
 
-    # Add the R2 annotation
+    # Add the R2 and coefficients annotation
+    coefficients = regression_fit_results.params
+
     if xlim is None:
-        xposition = max(x_data) - 0.085
+        xposition = max(x_data) - 0.2 # 0.085
     else:
-        xposition = xlim[1] - 0.085
+        xposition = xlim[1] - 0.2 # 0.085
     if ylim is None:
-        yposition = min(y_data) + 0.5
+        yposition = min(y_data) + 0.55
     else:
-        yposition = ylim[0] + 0.5
+        yposition = ylim[0] + 0.55
 
     props = dict(boxstyle="round", facecolor="white", alpha=1)
+    slope_annotation = (
+        "Slope: "
+        + str(np.round(coefficients[x_column], 2))
+        + " ("
+        + str(np.round(regression_fit_results.conf_int(alpha=0.05)[0].loc[x_column], 2))
+        + ", "
+        + str(np.round(regression_fit_results.conf_int(alpha=0.05)[1].loc[x_column], 2))
+        + ")"
+    )
+    intercept_annotation = (
+        "Intercept: "
+        + str(np.round(coefficients["const"], 2))
+        + " ("
+        + str(np.round(regression_fit_results.conf_int(alpha=0.05)[0].loc["const"], 2))
+        + ", "
+        + str(np.round(regression_fit_results.conf_int(alpha=0.05)[1].loc["const"], 2))
+        + ")"
+    )
     ax.text(
         xposition,
         yposition,
-        r"$R^2$" + ": " + str(np.round(regression_fit_results.rsquared, 3)),
+        slope_annotation
+        + "\n"
+        + intercept_annotation
+        + "\n"
+        + r"$R^2$"
+        + ": "
+        + str(np.round(regression_fit_results.rsquared, 3)),
         fontsize=12,
         verticalalignment="top",
         bbox=props,
